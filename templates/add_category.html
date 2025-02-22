@@ -136,12 +136,39 @@
             width: 100%;
             height: 8.7rem;
         }
+        @font-face {
+    font-family: CarmenSansb;
+    src: url('/static/font/CarmenSans-Bold.ttf');
+    font-weight: normal;
+}
+        .ffont{
+            font-family: CarmenSansb;
+        }
 
         /* Responsive Design for small screens */
+        /* @media (max-width: 768px) {
+            .form-container {
+                width: 80%;
+                padding: 20px;
+            }
+        } */
+        
         @media (max-width: 768px) {
             .form-container {
                 width: 80%;
                 padding: 20px;
+            }
+            nav {
+                flex-direction: row; /* Keep nav items in a row */
+                justify-content: space-between; /* Space items evenly */
+                padding: 10px; /* Reduce padding */
+                gap: 1rem; /* Adjust gap for mobile */
+            }
+
+            nav a {
+                font-size: 1.2rem; /* Reduce font size for mobile */
+                padding: 8px 7px; /* Adjust padding for links */
+                white-space: nowrap;
             }
         }
     </style>
@@ -158,7 +185,7 @@
     <div class="form-container">
         <h2>Add New Category</h2>
 
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data" class="ffont">
             {% csrf_token %}
             <label for="heading">Category Name:</label>
             <input type="text" id="heading" name="heading" required>
@@ -197,7 +224,7 @@
             <label for="product10">Product 10:</label>
             <input type="text" id="product10" name="product10">
 
-            <button type="submit" class="submit-btn">Add Category</button>
+            <button type="submit" class="submit-btn"><span class="ffont">Add Category</span></button>
         </form>
 
         <a href="{% url 'myapp:show_categories' %}" class="back-link">Back to Categories</a>

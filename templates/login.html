@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,7 +52,7 @@
         }
 
         .form-section, .image-section {
-            flex: 1; /* Equal width for both sections */
+            flex: 1; 
             padding: 20px;
             box-sizing: border-box;
         }
@@ -74,12 +74,8 @@
 }
 
         #img_text {
-            /* font-size: 70px;
-            padding: 5rem 4rem; */
-         /* font-weight:bolder; */
             font-family: Monte, sans-serif;
-            color: black; /* Ensure visibility against the background */
-            /* padding: 80px 70px; */
+            color: black; 
             font-size: 80px;
             padding: 5rem 4rem;
             position: absolute;
@@ -175,10 +171,10 @@
             text-align: center;
         }
 
-        /* Responsive Design */
+       
         @media (max-width: 767px) {
             .container {
-                flex-direction: column; /* Stack sections vertically for smaller screens */
+                flex-direction: column; 
             }
 
             .name{
@@ -190,7 +186,7 @@
             }
 
             .image-section {
-                height: 200px; /* Reduced height for smaller screens */
+                height: 200px; 
             }
         }
         #forgot{
@@ -208,11 +204,9 @@
     <div class="container">
         <div class="image-section">
             <div id="img_text"><span>Juicebar</span></div>
-        </div> <!-- Image aligned to the left -->
+        </div> 
         <div class="form-section">
-            <!-- {% if not user.is_authenticated %}
-            <span id="user_alert">Please Login to Continue</span>
-            {% endif %} -->
+            
             <h2 class="form-title">Login</h2>
             <form method="POST">
                 {% csrf_token %}
@@ -220,18 +214,12 @@
                     <label for="name">Username</label>
                     <input type="text" class="lname" name="username">
                 </div>
-                <!-- <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email">
-                </div> -->
+                
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password">
                 </div>
-                <!-- <div class="form-group">
-                    <label for="re-password">Repeat your password</label>
-                    <input type="password" id="re-password" name="re-password">
-                </div> -->
+                
                 <span id="span_data">{{ data }}</span>
                 <input type="hidden" name="next" value="{{ request.GET.next }}">
                 <a id="forgot" href="{% url 'forgot' %}">Forgot Password</a>
@@ -245,4 +233,229 @@
     </div>
 </div>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+            overflow: hidden;
+        }
+
+        .parent_slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            animation: slideshow 15s infinite;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        .child_container {
+            width: 90%;
+            max-width: 700px;
+            background-color: pink;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 8px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        @font-face {
+    font-family: CarmenSansR;
+    src: url('/static/font/CarmenSans-Bold.ttf');
+    font-weight: normal;
+}
+
+
+
+@font-face {
+    font-family: Monte;
+    src: url('/static/font/MonteCarlo-Regular.ttf');
+    font-weight: normal;
+}
+
+        .image-section {
+            flex: 1;
+            background-image: url('../static/images/i8.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #img_text {
+            font-family: Monte, sans-serif;
+            color: black;
+            font-size: 70px;
+            text-align: center;
+        }
+
+        .form-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            /* font-family: 'Poppins', sans-serif; */
+            font-family: CarmenSansR, sans-serif;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .form-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .register-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .register-button:hover {
+            background-color: #0056b3;
+        }
+        #span_data{
+            color: red;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .member-link {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .member-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        #forgot {
+            display: block;
+            text-align: right;
+            font-size: 14px;
+            margin-top: 5px;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .lname{
+            font-family: CarmenSansR, sans-serif;
+        }
+
+        @keyframes slideshow {
+            0% { background-image: url('../static/images/i1.png'); transform: scale(1); }
+            20% { background-image: url('../static/images/i1.png'); transform: scale(1.1); }
+            20.1% { background-image: url('../static/images/i2.png'); transform: scale(1); }
+            40% { background-image: url('../static/images/i2.png'); transform: scale(1.1); }
+            40.1% { background-image: url('../static/images/i3.png'); transform: scale(1); }
+            60% { background-image: url('../static/images/i3.png'); transform: scale(1.1); }
+            60.1% { background-image: url('../static/images/i4.png'); transform: scale(1); }
+            80% { background-image: url('../static/images/i4.png'); transform: scale(1.1); }
+            80.1% { background-image: url('../static/images/i5.webp'); transform: scale(1); }
+            100% { background-image: url('../static/images/i5.webp'); transform: scale(1.1); }
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .image-section {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="parent_slideshow"></div>
+<div class="child_container">
+    <div class="container">
+        <div class="image-section">
+            <div id="img_text">Juicebar</div>
+        </div>
+        <div class="form-section">
+            <h2 class="form-title">Login</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Username</label>
+                    <input type="text" id="name" class="lname" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <span id="span_data">{{ data }}</span>
+                <input type="hidden" name="next" value="{{ request.GET.next }}">
+                <a id="forgot" href="{% url 'forgot' %}">Forgot Password?</a>
+                <button type="submit" class="register-button"><span class="lname">Login</span></button>
+                <div class="member-link">
+                    <a href="{% url 'signup' %}">New User? Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
 </html>
+

@@ -11,6 +11,7 @@
             src: url('/static/font/PlayfairDisplaySC-Bold.ttf');
             font-weight: normal;
         }
+        
         body {
             margin: 0;
             padding: 0;
@@ -161,6 +162,40 @@
         h2.title{
             color:rgba(235, 12, 12, 0.733);
             font-family: PlayfairDisplayBold;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: row; /* Keep nav items in a row */
+                justify-content: space-between; /* Space items evenly */
+                padding: 10px; /* Reduce padding */
+                gap: 1rem; /* Adjust gap for mobile */
+            }
+
+            nav a {
+                font-size: 1.2rem; /* Reduce font size for mobile */
+                padding: 8px 7px; /* Adjust padding for links */
+                white-space: nowrap;
+            }
+            h2.title {
+                font-size: 24px; /* Adjust title size */
+            }
+
+            .add-button {
+                font-size: 1.1rem; /* Adjust button size */
+            }
+
+            .table_parent {
+                font-size: 1rem; /* Adjust table font size */
+            }
+
+            table {
+                width: 100%; /* Full width for table */
+            }
+
+            td img {
+                width: 60px; /* Adjust image size */
+                height: 60px; /* Adjust image size */
+            }
         }
     </style>
 </head>

@@ -139,7 +139,7 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        /* @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 36px;
             }
@@ -157,6 +157,34 @@
             nav {
                 flex-direction: column;
                 gap: 15px;
+            }
+        } */
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+
+            .hero-content a {
+                margin: 10px;
+                width: 80%;
+                font-size: 16px;
+            }
+            nav {
+                flex-direction: row; /* Keep nav items in a row */
+                justify-content: space-between; /* Space items evenly */
+                padding: 10px; /* Reduce padding */
+                gap: 1rem; /* Adjust gap for mobile */
+            }
+
+            nav a {
+                font-size: 1.2rem; /* Reduce font size for mobile */
+                padding: 8px 7px; /* Adjust padding for links */
+                white-space: nowrap;
             }
         }
     </style>

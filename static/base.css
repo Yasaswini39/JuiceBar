@@ -352,3 +352,55 @@ button a{
     opacity:1;
     animation: bounceInFromRight 0.5s forwards;
 }
+
+@media (max-width: 768px) {
+    #span_nav_head {
+        font-size: 18px; /* Reduced font size for mobile */
+    }
+    
+    #logo {
+        width: 3rem; /* Reduced logo size for mobile */
+        height: 4rem; /* Reduced logo size for mobile */
+    }
+    
+    #list {
+        gap: 0px; /* Reduced gap between nav items */
+    }
+    
+    #list a {
+        font-size: 9px; /* Reduced font size for nav links */
+        padding: 6px 10px; /* Adjusted padding for nav links */
+    }
+    .footer-columns {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center; /* Center footer content */
+    }
+    
+    .footer-logo h2 {
+        font-size: 3rem; /* Reduced footer logo size */
+    }
+    
+    .footer-logo p {
+        font-size: 1.2rem; /* Reduced footer description size */
+    }
+    
+    .footer-links h3, .footer-contact h3, .footer-social h3 {
+        font-size: 1.2rem; /* Reduced footer section heading size */
+    }
+    
+    .footer-links li {
+        font-size: 1.2rem; /* Reduced footer link size */
+    }
+    
+    .footer-contact p {
+        font-size: 1.2rem; /* Reduced footer contact info size */
+    }
+    
+    .footer-social a {
+        font-size: 2rem; /* Reduced social icon size */
+    }
+    
+    .footer-copyright {
+        font-size: 1.5rem; /* Reduced copyright text size */
+    }
+}
